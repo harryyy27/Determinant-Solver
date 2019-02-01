@@ -26,26 +26,21 @@ const det = (arr, cb)=>{
 
 
 
-    // if(!Array.isArray(arr)){
-    //     return cb(new TypeError('Input an array'));
-    // }
-    // if(!arr.every(el=> Array.isArray(el))) {
-    //     return cb(new TypeError('array elements not an array'));
-    // }
-    // arr.forEach((el)=>{
-    //     if(!Array.isArray(el)){
-            
-    //     }
-    //     if(!el.every(el=> typeof el === 'number')){
-    //         return cb(new TypeError('all elements should be numbers'))
-    //     }
-            
-       
-    //     if(el.length !== arr.length){
-    //         return cb(new Error('Please input square array'));
-    //     }
-    // })
-    
+    if(!Array.isArray(arr)){
+        return cb(new TypeError('Input an array'));
+    }
+    else if(!arr.every(el=> Array.isArray(el))) {
+        return cb(new TypeError('Array elements not an array'));
+    }
+    else if(!arr.every(el=>el.every(subel=>typeof subel ==='number'))){
+        return cb(new TypeError('All elements of sub arrays should be numbers'));
+    }
+    else if(!arr.every(el=>Array.isArray(el))){
+        return cb(new TypeError('All elements of array should be arrays'));
+    }
+    else if(!arr.every(el=>el.length===arr.length)){
+        return cb(new TypeError('Please input square matrix'));
+    }    
     return cb(null, calc(arr));
 
 }

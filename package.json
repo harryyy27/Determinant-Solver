@@ -1,0 +1,23 @@
+{
+  "name": "determinant-solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryyy27/Determinant-Solver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harryyy27/Determinant-Solver/issues"
+  },
+  "homepage": "https://github.com/harryyy27/Determinant-Solver#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2"
+  }
+}
